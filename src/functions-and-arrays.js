@@ -101,7 +101,27 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+// function uniquifyArray(arr) {
+//   if (arr.length === 0) {
+//     return null;
+//   }
+//   return [...new Set(arr)];
+// }
+
+function uniquifyArray(arr) {
+  if (arr.length === 0) {
+    return null;
+  }
+  let cleanArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i], cleanArray.indexOf(arr[i]));
+    if (cleanArray.indexOf(arr[i]) < 0) {
+      cleanArray.push(arr[i]);
+    }
+  }
+  return cleanArray;
+}
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
@@ -128,7 +148,15 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(wordArr, selectedWord) {
+  let counter = 0;
+  for (let i = 0; i < wordArr.length; i++) {
+    if (wordArr[i] === selectedWord) {
+      counter++;
+    }
+  }
+  return counter;
+}
 
 // Iteration #8: Bonus
 const matrix = [
